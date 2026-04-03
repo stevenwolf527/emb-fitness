@@ -103,17 +103,18 @@
     }
 
     .nav-cta {
-      font-size: 13px;
+      font-size: 16px;
       font-weight: 600;
       padding: 8px 20px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: #fff !important;
       border-radius: 8px;
-      transition: opacity 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .nav-cta:hover {
-      opacity: 0.85;
+      box-shadow: 0 4px 16px rgba(16,185,129,0.25), inset 0 1px 0 rgba(255,255,255,0.1);
+      transform: translateY(-1px);
     }
 
     /* ====== HAMBURGER ====== */
@@ -328,7 +329,7 @@
     .problem-icon-mindset { background: rgba(245,158,11,0.1); color: #F59E0B; }
 
     .problem-card h3 {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 600;
       margin-bottom: 8px;
       color: rgba(240,240,242,0.95);
@@ -711,11 +712,11 @@
     }
 
     .hiw-step-number {
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(16,185,129,0.45);
+      color: rgba(16,185,129,0.7);
       margin-bottom: 6px;
       line-height: 1;
     }
@@ -1147,7 +1148,7 @@
 
     .form-submit {
       font-family: 'neue-haas-grotesk-display', sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       padding: 14px 28px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
@@ -1155,12 +1156,13 @@
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      transition: opacity 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
       margin-top: 4px;
     }
 
     .form-submit:hover {
-      opacity: 0.85;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16,185,129,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
     }
 
     /* ====== CTA BANNER ====== */
@@ -1189,13 +1191,13 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       padding: 14px 28px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       color: #fff;
       border-radius: 10px;
-      transition: all 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     /* Secondary CTA — mint outline */
@@ -1203,7 +1205,7 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       padding: 14px 28px;
       background: transparent;
@@ -1221,8 +1223,8 @@
 
 
     .cta-btn:hover {
-      opacity: 0.85;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16,185,129,0.3), inset 0 1px 0 rgba(255,255,255,0.12);
     }
 
     .cta-btn svg {
