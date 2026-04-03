@@ -16,7 +16,7 @@
   <meta name="twitter:description" content="Train with alignment, not just intensity.">
   <meta name="twitter:image" content="https://embfitness.com/assets/og.jpg">
   <title>EMB Fitness | The Alignment Method</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310B981'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Google Sans,Arial,sans-serif' font-weight='700' font-size='14' fill='white'%3EEMB%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%23111113'/%3E%3Cstop offset='100%25' stop-color='%230a0a0b'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Crect x='.5' y='.5' width='31' height='31' rx='6.5' fill='none' stroke='%23ffffff' stroke-opacity='.06'/%3E%3Ctext x='16' y='21.5' text-anchor='middle' font-family='system-ui,-apple-system,sans-serif' font-weight='700' font-size='12' letter-spacing='-0.3' fill='%23F0F0F2'%3EEMB%3C/text%3E%3Ccircle cx='27' cy='20' r='1.5' fill='%2310B981'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="https://use.typekit.net/nwu0gei.css">
   <style>
     *, *::before, *::after {
@@ -159,6 +159,35 @@
     .hero-content {
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    /* Hero blur-in entrance — Linear style */
+    .hero .section-eyebrow,
+    .hero h1,
+    .hero p,
+    .hero-scroll {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(10px);
+      animation: hero-blur-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero .section-eyebrow { animation-delay: 0.1s; }
+    .hero h1 { animation-delay: 0.22s; }
+    .hero p { animation-delay: 0.36s; }
+    .hero-scroll { animation-delay: 0.5s; }
+
+    @keyframes hero-blur-in {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
     }
 
     .hero h1 {
@@ -1204,18 +1233,49 @@
     }
 
     .footer-brand {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 700;
-      color: rgba(240,240,242,0.5);
+      letter-spacing: -0.02em;
+      color: #F0F0F2;
     }
 
     .footer-brand span {
       color: #10B981;
     }
 
+    .footer-center {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .footer-copy {
       font-size: 13px;
       color: rgba(240,240,242,0.35);
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: rgba(240,240,242,0.4);
+      transition: all 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.1);
+      color: rgba(240,240,242,0.7);
+    }
+
+    .footer-social a svg {
+      width: 16px;
+      height: 16px;
     }
 
     /* ====== RESPONSIVE ====== */
@@ -1255,10 +1315,15 @@
       .method-sticky { position: relative; height: auto; min-height: auto; padding: 80px 0 60px; }
       .method-progress-bar { display: none; }
       .pillar-glow { display: none; }
+      .method-header { text-align: left; max-width: none; }
+      .method-header .section-subtitle { margin: 0; max-width: none; }
+      .method-header .section-title br,
+      .method-header .section-subtitle br { display: none; }
       .method-badge, .method-header .section-title, .method-header .section-subtitle {
         opacity: 1; transform: none; filter: none;
       }
-      .pillar-card { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .pillar-card { opacity: 1 !important; transform: none !important; filter: none !important; text-align: left; }
+      .pillar-icon { margin: 0 0 22px; }
       .alignment-note { opacity: 1; transform: none; filter: none; }
       .hiw-layout { grid-template-columns: 1fr; gap: 48px; }
       .hiw-step { opacity: 1; transform: none; filter: none; }
@@ -1612,7 +1677,14 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-brand">EMB<span>.</span></div>
-      <div class="footer-copy">&copy; 2026 EMB Fitness. All rights reserved.</div>
+      <div class="footer-center">
+        <div class="footer-social">
+          <a href="https://www.youtube.com/channel/UCkJ2VcBb9pZ6-gSd0wxObPw/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </div>
+        <div class="footer-copy">&copy; 2026 EMB Fitness. All rights reserved.</div>
+      </div>
     </div>
   </footer>
 
