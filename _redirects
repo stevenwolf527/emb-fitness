@@ -1,0 +1,2 @@
+# Redirect www to root domain
+https://www.embfitness.com/* https://embfitness.com/:splat 301!

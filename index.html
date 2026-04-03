@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EMB Fitness — System-based coaching that aligns training, nutrition, recovery, and mindset for predictable results.">
+  <meta name="theme-color" content="#10B981">
+  <meta property="og:title" content="EMB Fitness | The Alignment Method">
+  <meta property="og:description" content="System-based coaching that aligns training, nutrition, recovery, and mindset for predictable results.">
+  <meta property="og:image" content="https://embfitness.com/assets/og.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://embfitness.com">
+  <link rel="canonical" href="https://embfitness.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EMB Fitness | The Alignment Method">
+  <meta name="twitter:description" content="Train with alignment, not just intensity.">
+  <meta name="twitter:image" content="https://embfitness.com/assets/og.jpg">
+  <title>EMB Fitness | The Alignment Method</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2310B981'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Google Sans,Arial,sans-serif' font-weight='700' font-size='14' fill='white'%3EEMB%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://use.typekit.net/nwu0gei.css">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'disply', sans-serif;
+      background: #08090B;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(140,150,170,0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 85% 90%, rgba(0,0,0,0.35) 0%, transparent 60%),
+        linear-gradient(165deg, rgba(120,130,150,0.012) 0%, transparent 40%, rgba(0,0,0,0.08) 100%);
+      background-attachment: fixed;
+      color: #F0F0F2;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ====== NAV ====== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      background: rgba(10,10,10,0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.3s ease;
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #F0F0F2;
+    }
+
+    .nav-logo span {
+      color: #10B981;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(240,240,242,0.6);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #F0F0F2;
+    }
+
+    .nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 20px;
+      background: #10B981;
+      color: #fff !important;
+      border-radius: 8px;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.85;
+    }
+
+    /* ====== HAMBURGER ====== */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .nav-hamburger span {
+      width: 20px;
+      height: 1.5px;
+      background: #F0F0F2;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 0 80px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(16,185,129,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'disply', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      background: linear-gradient(180deg, rgba(240,240,242,0.4) 0%, rgba(240,240,242,0.95) 45%, #F0F0F2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(240,240,242,0.65);
+      max-width: 560px;
+      margin: 0 auto 48px;
+    }
+
+    .hero-scroll {
+      display: flex;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .hero-scroll a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      animation: pulse-down 2s ease-in-out infinite;
+    }
+
+    .hero-scroll a:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .hero-scroll svg {
+      width: 18px;
+      height: 18px;
+      color: rgba(240,240,242,0.4);
+    }
+
+    @keyframes pulse-down {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    /* ====== SECTION COMMON ====== */
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-border {
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #10B981;
+      padding: 6px 14px;
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.12);
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: 'disply', sans-serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(240,240,242,0.6);
+      max-width: 520px;
+    }
+
+    /* ====== PROBLEM ====== */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .problem-card {
+      padding: 28px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      transition: border-color 0.3s ease;
+    }
+
+    .problem-card:hover {
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .problem-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .problem-card-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .problem-icon-nutrition { background: rgba(16,185,129,0.1); color: #10B981; }
+    .problem-icon-recovery { background: rgba(139,92,246,0.1); color: #8B5CF6; }
+    .problem-icon-system { background: rgba(99,102,241,0.1); color: #6366F1; }
+    .problem-icon-mindset { background: rgba(245,158,11,0.1); color: #F59E0B; }
+
+    .problem-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: rgba(240,240,242,0.95);
+    }
+
+    .problem-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(240,240,242,0.65);
+    }
+
+    /* ====== METHOD (4 PILLARS) — Scroll-driven sequence ====== */
+    .method-section {
+      position: relative;
+      padding: 0;
+      height: 400vh;
+    }
+
+    .method-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+      overflow: hidden;
+    }
+
+    .method-inner {
+      width: 100%;
+      position: relative;
+    }
+
+    /* Ambient glow behind active card area */
+    .method-inner::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(16,185,129,0.04) 0%, transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .method-inner.method-entered::before {
+      opacity: 1;
+    }
+
+    /* Header — blur-in reveal */
+    .method-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 32px;
+    }
+
+    .method-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .method-badge,
+    .method-header .section-title,
+    .method-header .section-subtitle {
+      opacity: 0;
+      transform: translateY(16px);
+      filter: blur(8px);
+      transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .method-header .section-title {
+      transition-delay: 0.08s;
+    }
+
+    .method-header .section-subtitle {
+      transition-delay: 0.16s;
+    }
+
+    .method-inner.method-entered .method-badge,
+    .method-inner.method-entered .method-header .section-title,
+    .method-inner.method-entered .method-header .section-subtitle {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .method-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #10B981;
+      padding: 6px 14px;
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.12);
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    /* Progress bar */
+    .method-progress-bar {
+      margin: 0 auto 48px;
+      height: 2px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 2px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.8s ease 0.3s;
+    }
+
+    .method-inner.method-entered .method-progress-bar {
+      opacity: 1;
+    }
+
+    .method-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #6366F1;
+      border-radius: 2px;
+      will-change: width;
+      transition: background-color 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Cards grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+    }
+
+    /* Ambient glow that follows active card */
+    .pillar-glow {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      top: 0;
+      pointer-events: none;
+      border-radius: 16px;
+      opacity: 0;
+      transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+      background: radial-gradient(ellipse at center 60%, rgba(16,185,129,0.06) 0%, transparent 70%);
+    }
+
+    .pillar-glow.glow-visible {
+      opacity: 1;
+    }
+
+    .pillar-card {
+      padding: 36px 28px;
+      background: rgba(255,255,255,0.01);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 16px;
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      filter: blur(4px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                  filter 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                  background 0.7s ease,
+                  border-color 0.7s ease,
+                  box-shadow 0.7s ease;
+    }
+
+    /* Staggered card entrance */
+    .method-inner.method-entered .pillar-card {
+      opacity: 0.28;
+      transform: scale(0.96);
+      filter: blur(0px);
+    }
+
+    .method-inner.method-entered .pillar-card:nth-child(1) { transition-delay: 0.2s; }
+    .method-inner.method-entered .pillar-card:nth-child(2) { transition-delay: 0.28s; }
+    .method-inner.method-entered .pillar-card:nth-child(3) { transition-delay: 0.36s; }
+    .method-inner.method-entered .pillar-card:nth-child(4) { transition-delay: 0.44s; }
+
+    /* Active state — resolves into focus */
+    .pillar-card.pillar-active {
+      opacity: 1 !important;
+      transform: scale(1.04) translateY(-4px) !important;
+      filter: blur(0px) !important;
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transition-delay: 0s !important;
+    }
+
+    .pillar-card.pillar-passed {
+      opacity: 0.32 !important;
+      transform: scale(0.97) !important;
+      filter: blur(0px) !important;
+      transition-delay: 0s !important;
+    }
+
+    /* Icon */
+    .pillar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  background 0.7s ease,
+                  box-shadow 0.8s ease;
+    }
+
+    .pillar-card.pillar-active .pillar-icon {
+      transform: scale(1.08);
+    }
+
+    .pillar-icon svg { width: 24px; height: 24px; }
+    .pillar-icon-exercise { background: rgba(99,102,241,0.1); color: #6366F1; }
+    .pillar-icon-nutrition { background: rgba(16,185,129,0.1); color: #10B981; }
+    .pillar-icon-recovery { background: rgba(139,92,246,0.1); color: #8B5CF6; }
+    .pillar-icon-mindset { background: rgba(245,158,11,0.1); color: #F59E0B; }
+
+    /* Active icon — subtle bloom */
+    .pillar-card.pillar-active .pillar-icon-exercise { background: rgba(99,102,241,0.16); box-shadow: 0 0 20px rgba(99,102,241,0.08); }
+    .pillar-card.pillar-active .pillar-icon-nutrition { background: rgba(16,185,129,0.16); box-shadow: 0 0 20px rgba(16,185,129,0.08); }
+    .pillar-card.pillar-active .pillar-icon-recovery { background: rgba(139,92,246,0.16); box-shadow: 0 0 20px rgba(139,92,246,0.08); }
+    .pillar-card.pillar-active .pillar-icon-mindset { background: rgba(245,158,11,0.16); box-shadow: 0 0 20px rgba(245,158,11,0.08); }
+
+    /* Card inner elements — staggered resolve */
+    .pillar-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      transition: opacity 0.6s ease;
+    }
+
+    .pillar-label-exercise { color: #6366F1; }
+    .pillar-label-nutrition { color: #10B981; }
+    .pillar-label-recovery { color: #8B5CF6; }
+    .pillar-label-mindset { color: #F59E0B; }
+
+    .pillar-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: rgba(240,240,242,0.95);
+      transition: opacity 0.6s ease 0.05s;
+    }
+
+    .pillar-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(240,240,242,0.65);
+      transition: opacity 0.6s ease 0.1s;
+    }
+
+    /* Alignment note */
+    .alignment-note {
+      text-align: center;
+      padding: 28px 32px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      font-size: 16px;
+      color: rgba(240,240,242,0.5);
+      line-height: 1.6;
+      margin-top: 48px;
+      opacity: 0;
+      transform: translateY(10px);
+      filter: blur(4px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .alignment-note.note-visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .alignment-note strong {
+      color: rgba(240,240,242,0.85);
+      font-weight: 600;
+    }
+
+    /* ====== HOW IT WORKS ====== */
+    .hiw-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    /* Left: vertical process */
+    .hiw-process {
+      position: relative;
+      padding-left: 44px;
+    }
+
+    /* Vertical connector line — atmospheric fade */
+    .hiw-process::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.05) 15%, rgba(255,255,255,0.04) 85%, transparent 100%);
+    }
+
+    .hiw-step {
+      position: relative;
+      padding-bottom: 52px;
+      opacity: 0;
+      transform: translateY(12px);
+      filter: blur(3px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hiw-step:last-child {
+      padding-bottom: 0;
+    }
+
+    /* Staggered reveal */
+    .hiw-step.hiw-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+    .hiw-step:nth-child(1) { transition-delay: 0s; }
+    .hiw-step:nth-child(2) { transition-delay: 0.15s; }
+    .hiw-step:nth-child(3) { transition-delay: 0.3s; }
+
+    /* Step node — centered on step label baseline */
+    .hiw-step::before {
+      content: '';
+      position: absolute;
+      left: -37px;
+      top: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(16,185,129,0.2);
+      border: 1.5px solid rgba(16,185,129,0.35);
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 2;
+    }
+
+    /* Pulse ring behind node */
+    .hiw-step::after {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: -1px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid rgba(16,185,129,0.08);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      animation: hiw-pulse 3s ease-in-out infinite;
+      animation-play-state: paused;
+    }
+
+    .hiw-step:hover::before {
+      background: rgba(16,185,129,0.5);
+      border-color: rgba(16,185,129,0.6);
+      box-shadow: 0 0 16px rgba(16,185,129,0.15);
+    }
+
+    .hiw-step:hover::after {
+      opacity: 1;
+      animation-play-state: running;
+    }
+
+    @keyframes hiw-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .hiw-step-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(16,185,129,0.45);
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    .hiw-step h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: rgba(240,240,242,0.95);
+      transition: color 0.4s ease;
+    }
+
+    .hiw-step:hover h3 {
+      color: #F0F0F2;
+    }
+
+    .hiw-step p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(240,240,242,0.5);
+      max-width: 420px;
+      transition: color 0.4s ease;
+    }
+
+    .hiw-step:hover p {
+      color: rgba(240,240,242,0.65);
+    }
+
+    /* Right: image */
+    .hiw-image {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hiw-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Smooth edge fade into background */
+    .hiw-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background:
+        linear-gradient(to right, #08090B 0%, transparent 15%, transparent 85%, #08090B 100%),
+        linear-gradient(to bottom, transparent 60%, #08090B 100%),
+        linear-gradient(to top, transparent 80%, rgba(8,9,11,0.4) 100%);
+      pointer-events: none;
+    }
+
+    /* Placeholder visual when no image */
+    .hiw-image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      color: rgba(240,240,242,0.2);
+    }
+
+    .hiw-image-placeholder svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.3;
+    }
+
+    .hiw-image-placeholder span {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    /* ====== COACHING ====== */
+
+    /* Top row: two columns */
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-top: 56px;
+    }
+
+    .coaching-col-header {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(240,240,242,0.95);
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .coaching-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .coaching-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: rgba(240,240,242,0.7);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .coaching-list li:first-child {
+      padding-top: 0;
+    }
+
+    .coaching-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .coaching-list li svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      padding: 6px;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      margin-top: 0;
+    }
+
+    .coaching-list .check-icon {
+      color: #10B981;
+      background: rgba(16,185,129,0.1);
+    }
+
+    /* Bottom row: not-for banner (matches alignment-note style) */
+    .coaching-not-for {
+      margin-top: 48px;
+      padding: 24px 32px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      font-size: 16px;
+      color: rgba(240,240,242,0.5);
+    }
+
+    .coaching-not-for-items {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .coaching-not-for-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(240,240,242,0.5);
+    }
+
+    .coaching-not-for-item svg {
+      width: 24px;
+      height: 24px;
+      padding: 5px;
+      flex-shrink: 0;
+      color: rgba(239,68,68,0.5);
+      background: rgba(239,68,68,0.08);
+      border-radius: 6px;
+    }
+
+    /* ====== ABOUT ====== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .about-photo {
+      aspect-ratio: 3/4;
+      max-width: 320px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 14px;
+      background:
+        linear-gradient(to right, #08090B 0%, transparent 12%, transparent 88%, #08090B 100%),
+        linear-gradient(to bottom, transparent 55%, #08090B 100%),
+        linear-gradient(to top, transparent 75%, rgba(8,9,11,0.5) 100%);
+      pointer-events: none;
+    }
+
+    .about-text h3 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: rgba(240,240,242,0.95);
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(240,240,242,0.6);
+      margin-bottom: 24px;
+    }
+
+    /* Stats rail */
+    .about-stats {
+      display: flex;
+      gap: 0;
+      margin-top: 32px;
+      padding-top: 28px;
+      position: relative;
+    }
+
+    /* Fading top divider */
+    .about-stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%);
+    }
+
+    .about-stat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      position: relative;
+      padding: 0 24px;
+    }
+
+    .about-stat:first-child {
+      padding-left: 0;
+    }
+
+    .about-stat:last-child {
+      padding-right: 0;
+    }
+
+    /* Fading vertical separator */
+    .about-stat + .about-stat::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.06) 70%, transparent 100%);
+    }
+
+    .about-stat-value {
+      font-family: 'disply', sans-serif;
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: #10B981;
+      opacity: 0;
+      transform: translateY(8px);
+      filter: blur(4px);
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .about-stat-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(240,240,242,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+    }
+
+    /* Reveal on view */
+    .about-stats.stats-visible .about-stat-value,
+    .about-stats.stats-visible .about-stat-label {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    /* Stagger per stat */
+    .about-stats.stats-visible .about-stat:nth-child(1) .about-stat-value { transition-delay: 0s; }
+    .about-stats.stats-visible .about-stat:nth-child(1) .about-stat-label { transition-delay: 0.08s; }
+    .about-stats.stats-visible .about-stat:nth-child(2) .about-stat-value { transition-delay: 0.12s; }
+    .about-stats.stats-visible .about-stat:nth-child(2) .about-stat-label { transition-delay: 0.2s; }
+    .about-stats.stats-visible .about-stat:nth-child(3) .about-stat-value { transition-delay: 0.24s; }
+    .about-stats.stats-visible .about-stat:nth-child(3) .about-stat-label { transition-delay: 0.32s; }
+
+    /* ====== APPLY ====== */
+    .apply-section {
+      background: rgba(255,255,255,0.015);
+    }
+
+    .apply-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .apply-info h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .apply-info p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(240,240,242,0.6);
+      margin-bottom: 32px;
+    }
+
+    .apply-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .apply-info-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      color: rgba(240,240,242,0.65);
+    }
+
+    .apply-info-list li svg {
+      width: 16px;
+      height: 16px;
+      color: #10B981;
+      flex-shrink: 0;
+    }
+
+    .apply-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(240,240,242,0.7);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font-family: 'disply', sans-serif;
+      font-size: 14px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      color: #F0F0F2;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: rgba(16,185,129,0.4);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(240,240,242,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+      color: #F0F0F2;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      font-family: 'disply', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      background: #10B981;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      margin-top: 4px;
+    }
+
+    .form-submit:hover {
+      opacity: 0.85;
+    }
+
+    /* ====== CTA BANNER ====== */
+    .cta-banner {
+      margin-top: 80px;
+      padding: 48px;
+      background: rgba(16,185,129,0.04);
+      border: 1px solid rgba(16,185,129,0.08);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .cta-banner h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-banner p {
+      font-size: 16px;
+      color: rgba(240,240,242,0.6);
+      margin-bottom: 24px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 28px;
+      background: #10B981;
+      color: #fff;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .cta-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ====== SCROLL ANIMATIONS ====== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-brand {
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(240,240,242,0.5);
+    }
+
+    .footer-brand span {
+      color: #10B981;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(240,240,242,0.35);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10,10,10,0.96);
+        backdrop-filter: blur(20px);
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        z-index: 100;
+      }
+
+      .nav-links.open a {
+        font-size: 20px;
+        color: rgba(240,240,242,0.7);
+      }
+
+      .hero { min-height: auto; padding: 140px 0 80px; text-align: left; }
+      .hero-content { text-align: left; }
+      .hero p { margin-left: 0; }
+      .hero-scroll { justify-content: flex-start; }
+      .section-title, .section-subtitle, .section-eyebrow { text-align: left; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .method-section { height: auto; }
+      .method-sticky { position: relative; height: auto; min-height: auto; padding: 80px 0 60px; }
+      .method-progress-bar { display: none; }
+      .pillar-glow { display: none; }
+      .method-badge, .method-header .section-title, .method-header .section-subtitle {
+        opacity: 1; transform: none; filter: none;
+      }
+      .pillar-card { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .alignment-note { opacity: 1; transform: none; filter: none; }
+      .hiw-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hiw-step { opacity: 1; transform: none; filter: none; }
+      .hiw-image { aspect-ratio: 16/9; }
+      .coaching-grid { grid-template-columns: 1fr; gap: 40px; }
+      .coaching-not-for { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .coaching-not-for-items { flex-direction: column; gap: 12px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .apply-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .about-stats { flex-direction: column; gap: 20px; }
+      .about-stat { padding: 0; }
+      .about-stat + .about-stat::before { display: none; }
+      .about-stat-value, .about-stat-label { opacity: 1; transform: none; filter: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <a href="#home" class="nav-logo">EMB<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#method">Method</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#about">About</a>
+        <a href="#apply" class="nav-cta">Apply Now</a>
+      </div>
+      <div class="nav-hamburger" id="navHamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="section-eyebrow">Welcome to EMB Fitness</div>
+        <h1>Train With Alignment.<br>Not Just Intensity.</h1>
+        <p>A system-based approach to fitness that aligns training, nutrition, recovery, and mindset for results you can actually predict.</p>
+        <div class="hero-scroll">
+          <a href="#problem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section section-border" id="problem">
+    <div class="container">
+      <div class="section-eyebrow fade-in">The problem</div>
+      <h2 class="section-title fade-in">Most people train hard.<br>They just don't see results.</h2>
+      <p class="section-subtitle fade-in">It's not a motivation problem. It's a systems problem.</p>
+      <div class="problem-grid">
+        <div class="problem-card fade-in">
+          <div class="problem-card-icon problem-icon-nutrition">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg>
+          </div>
+          <h3>Inconsistent nutrition</h3>
+          <p>Training hard but eating without a plan. The output is there, but the input never matches.</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-card-icon problem-icon-recovery">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+          </div>
+          <h3>Poor recovery</h3>
+          <p>Ignoring sleep, stress, and rest days. Your body adapts when you recover, not when you train.</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-card-icon problem-icon-system">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+          </div>
+          <h3>No clear system</h3>
+          <p>Jumping between programs, influencers, and trends. Effort without direction is just motion.</p>
+        </div>
+        <div class="problem-card fade-in">
+          <div class="problem-card-icon problem-icon-mindset">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <h3>Willpower-dependent</h3>
+          <p>Relying on motivation instead of structure. Motivation fades. Systems don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ALIGNMENT METHOD -->
+  <section class="section section-border method-section" id="method">
+    <div class="method-sticky">
+      <div class="method-inner">
+        <div class="container">
+          <div class="method-header">
+            <div class="method-badge">The Alignment Method</div>
+            <h2 class="section-title">Results come from&nbsp;alignment,<br>not effort&nbsp;alone</h2>
+            <p class="section-subtitle">Four pillars. One system. When they're aligned,<br>results become&nbsp;predictable.</p>
+          </div>
+
+          <div class="method-progress-bar">
+            <div class="method-progress-fill" id="methodFill"></div>
+          </div>
+
+        <div class="pillars-grid" id="pillarsGrid">
+          <div class="pillar-glow" id="pillarGlow"></div>
+          <div class="pillar-card" data-pillar="exercise">
+            <div class="pillar-icon pillar-icon-exercise">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <div class="pillar-label pillar-label-exercise">Output</div>
+            <h3>Exercise</h3>
+            <p>Training drives the stimulus. We program for your goals, not for trends.</p>
+          </div>
+          <div class="pillar-card" data-pillar="nutrition">
+            <div class="pillar-icon pillar-icon-nutrition">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg>
+            </div>
+            <div class="pillar-label pillar-label-nutrition">Input</div>
+            <h3>Nutrition</h3>
+            <p>Fuel for results, not restrictive dieting. Sustainable nutrition that fits your life.</p>
+          </div>
+          <div class="pillar-card" data-pillar="recovery">
+            <div class="pillar-icon pillar-icon-recovery">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></svg>
+            </div>
+            <div class="pillar-label pillar-label-recovery">Adaptation</div>
+            <h3>Recovery</h3>
+            <p>Progress happens during rest. Sleep, stress management, and deloads are programmed in.</p>
+          </div>
+          <div class="pillar-card" data-pillar="mindset">
+            <div class="pillar-icon pillar-icon-mindset">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+            </div>
+            <div class="pillar-label pillar-label-mindset">Consistency</div>
+            <h3>Mindset</h3>
+            <p>Discipline over motivation. We build habits and accountability that outlast any program.</p>
+          </div>
+        </div>
+
+          <div class="alignment-note" id="alignmentNote">
+            If one pillar is off, results slow down — <strong>no matter how hard you work elsewhere</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section-border">
+    <div class="container">
+      <div class="section-eyebrow fade-in">How it works</div>
+      <h2 class="section-title fade-in">Three steps. No confusion.</h2>
+      <p class="section-subtitle fade-in">We keep it simple because fitness doesn't need to be complicated.</p>
+      <div class="hiw-layout">
+        <div class="hiw-process fade-in">
+          <div class="hiw-step">
+            <div class="hiw-step-number">Step 01</div>
+            <h3>Apply</h3>
+            <p>Tell us about your goals, current habits, and what's not working. Takes about 5 minutes.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-number">Step 02</div>
+            <h3>Get your plan</h3>
+            <p>We assess your alignment across all four pillars and build a plan around your limiting factor.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-step-number">Step 03</div>
+            <h3>Execute and adjust</h3>
+            <p>Train with structure, check in weekly, and adjust as your body responds. Simple.</p>
+          </div>
+        </div>
+        <div class="hiw-image fade-in">
+          <img src="assets/gym.jpg" alt="EMB Fitness gym interior" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHING -->
+  <section class="section section-border" id="coaching">
+    <div class="container">
+      <div class="section-eyebrow fade-in">Coaching</div>
+      <h2 class="section-title fade-in">What you actually get</h2>
+      <p class="section-subtitle fade-in">No mystery. No upsells. Here's what's included.</p>
+      <div class="coaching-grid fade-in">
+        <div class="coaching-col">
+          <div class="coaching-col-header">What's included</div>
+          <ul class="coaching-list">
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              Personalized training program
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              Nutrition guidance (not restrictive dieting)
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              Weekly alignment tracking
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              Ongoing coaching and accountability
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              Recovery and stress management protocols
+            </li>
+          </ul>
+        </div>
+        <div class="coaching-col">
+          <div class="coaching-col-header">This is for you if</div>
+          <ul class="coaching-list">
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              You're a busy professional who wants structure
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              You're getting back into fitness after a break
+            </li>
+            <li>
+              <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+              You're tired of starting over every few months
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="coaching-not-for fade-in">
+        <div class="coaching-not-for-items">
+          <div class="coaching-not-for-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+            People looking for quick fixes
+          </div>
+          <div class="coaching-not-for-item">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+            People who aren't ready to be consistent
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section-border" id="about">
+    <div class="container">
+      <div class="section-eyebrow fade-in">About</div>
+      <h2 class="section-title fade-in">The coach behind<br>the method</h2>
+      <div class="about-grid">
+        <div class="about-photo fade-in">
+          <img src="assets/coach.jpg" alt="EMB Fitness Coach" loading="lazy">
+        </div>
+        <div class="about-text fade-in">
+          <h3>I help people simplify fitness and actually see results</h3>
+          <p>Most coaches sell motivation. I build systems. After a decade of working with real people — not influencers — I've seen the same patterns over and over. People don't fail because they lack effort. They fail because their approach isn't aligned.</p>
+          <p>The Alignment Method is how I fix that.</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-value" data-count="10" data-suffix="+">0</span>
+              <span class="about-stat-label">Years</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">BSc</span>
+              <span class="about-stat-label">Kinesiology</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value" data-count="200" data-suffix="+">0</span>
+              <span class="about-stat-label">Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section class="section section-border apply-section" id="apply">
+    <div class="container">
+      <div class="apply-grid">
+        <div class="apply-info fade-in">
+          <div class="section-eyebrow">Apply</div>
+          <h2>Ready to train<br>with alignment?</h2>
+          <p>Fill out a quick application so we can understand where you are and whether this is a good fit.</p>
+          <ul class="apply-info-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+              Takes about 3 minutes
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+              No commitment required
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>
+              We'll respond within 24 hours
+            </li>
+          </ul>
+        </div>
+        <form class="apply-form fade-in" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="you@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="goal">What's your primary fitness goal?</label>
+            <input type="text" id="goal" placeholder="e.g. Lose weight, build muscle, get consistent">
+          </div>
+          <div class="form-group">
+            <label for="struggle">What's been your biggest struggle?</label>
+            <textarea id="struggle" placeholder="Be honest — that's what this is for"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="coached">Have you worked with a coach before?</label>
+            <select id="coached">
+              <option value="" disabled selected>Select one</option>
+              <option value="no">No, this would be my first time</option>
+              <option value="yes-good">Yes, and it went well</option>
+              <option value="yes-bad">Yes, but it didn't work out</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="focus">Which area needs the most attention right now?</label>
+            <select id="focus">
+              <option value="" disabled selected>Select one</option>
+              <option value="exercise">Exercise / Training</option>
+              <option value="nutrition">Nutrition</option>
+              <option value="recovery">Recovery</option>
+              <option value="mindset">Mindset / Consistency</option>
+              <option value="all">Honestly, all of them</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">EMB<span>.</span></div>
+      <div class="footer-copy">&copy; 2026 EMB Fitness. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(function(el) {
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // Count-up animation with easeOutExpo for a premium feel
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+    }
+
+    function countUp(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 2000;
+      var start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = easeOutExpo(progress);
+        var current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    var statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('stats-visible');
+          var counters = entry.target.querySelectorAll('[data-count]');
+          counters.forEach(function(el) { countUp(el); });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    var statsSection = document.querySelector('.about-stats');
+    if (statsSection) statsObserver.observe(statsSection);
+
+    // Method section — scroll-driven pillar sequence with micro-polish
+    (function() {
+      var section = document.querySelector('.method-section');
+      var inner = document.querySelector('.method-inner');
+      var cards = document.querySelectorAll('.pillar-card');
+      var fill = document.getElementById('methodFill');
+      var glow = document.getElementById('pillarGlow');
+      var note = document.getElementById('alignmentNote');
+      var currentStep = -1;
+      var entered = false;
+      var displayProgress = 0;
+
+      if (window.innerWidth <= 768 || !section) return;
+
+      var pillarColors = ['#6366F1', '#10B981', '#8B5CF6', '#F59E0B'];
+
+      function setStep(step) {
+        if (step === currentStep) return;
+        currentStep = step;
+        cards.forEach(function(card, i) {
+          card.classList.remove('pillar-active', 'pillar-passed');
+          if (i === step) card.classList.add('pillar-active');
+          else if (i < step) card.classList.add('pillar-passed');
+        });
+
+        // Update progress bar color to match active pillar
+        if (fill) fill.style.backgroundColor = pillarColors[step];
+
+        // Move ambient glow to active card position + match pillar color
+        if (glow) {
+          glow.style.left = (step * 25) + '%';
+          glow.style.background = 'radial-gradient(ellipse at center 60%, ' + pillarColors[step].replace(')', ',0.06)').replace('rgb', 'rgba').replace('#', '') + ' 0%, transparent 70%)';
+          // Convert hex to rgba for glow
+          var c = pillarColors[step];
+          var r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
+          glow.style.background = 'radial-gradient(ellipse at center 60%, rgba('+r+','+g+','+b+',0.06) 0%, transparent 70%)';
+          glow.classList.add('glow-visible');
+        }
+
+        if (step === 3 && note) note.classList.add('note-visible');
+      }
+
+      function onScroll() {
+        var sectionTop = section.offsetTop;
+        var scrollRange = section.offsetHeight - window.innerHeight;
+        var scrolled = window.scrollY - sectionTop;
+
+        // Trigger entrance animations once
+        if (scrolled > -200 && !entered) {
+          entered = true;
+          inner.classList.add('method-entered');
+        }
+
+        if (scrolled < 0) { setStep(0); displayProgress = 0; return; }
+        if (scrolled > scrollRange) { setStep(3); displayProgress = 1; return; }
+
+        var progress = Math.max(0, Math.min(1, scrolled / scrollRange));
+        setStep(Math.min(3, Math.floor(progress * 4)));
+
+        // Smooth interpolation for progress bar
+        displayProgress += (progress - displayProgress) * 0.15;
+        if (fill) fill.style.width = (displayProgress * 100) + '%';
+      }
+
+      // Use rAF loop for smooth bar interpolation
+      function animate() {
+        if (fill && Math.abs(displayProgress - (currentStep === -1 ? 0 : 0)) > 0.001) {
+          // Continuously lerp toward target
+        }
+        requestAnimationFrame(animate);
+      }
+
+      var ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(function() { onScroll(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Smooth progress bar animation loop
+      var targetProgress = 0;
+      (function smoothBar() {
+        var sectionTop = section.offsetTop;
+        var scrollRange = section.offsetHeight - window.innerHeight;
+        var scrolled = window.scrollY - sectionTop;
+        targetProgress = Math.max(0, Math.min(1, scrolled / scrollRange));
+        displayProgress += (targetProgress - displayProgress) * 0.08;
+        if (fill) fill.style.width = (displayProgress * 100) + '%';
+        requestAnimationFrame(smoothBar);
+      })();
+
+      setStep(0);
+    })();
+
+    // HIW step entrance animation
+    var hiwObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('hiw-visible');
+          hiwObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.hiw-step').forEach(function(s) { hiwObserver.observe(s); });
+  </script>
+</body>
+</html>
